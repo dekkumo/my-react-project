@@ -9,7 +9,6 @@ function App() {
 
   const [todos, setTodos] = useState([])
   const textInput = useRef()
-  const todoText = useRef()
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -29,10 +28,17 @@ function App() {
   }
 
   const handleClick = (id) => {
-    const newTodos = todos.filter((el) => {
+    const newTodos = todos.filter(el => {
       return el.id !== id
     })
     setTodos(newTodos)
+  }
+
+  const handleToggle =(id) => {
+    todos.forEach(elem => {
+      if (elem.id === id) elem.completed = !elem.completed
+    })
+    setTodos([...todos])
   }
   
   return (
@@ -63,8 +69,11 @@ function App() {
 
       {todos.map(el => (
         <div key={el.id} className='todo-list'>
-          <div>{el.text}</div>
-          <button onClick={() => handleClick(el.id)}>delete</button>
+          <div className={el.completed ? 'completed' : ''}>{el.text}</div>
+          <div>
+            <button className='btn-complete' onClick={() => handleToggle(el.id)}>complete</button>
+            <button className='btn-delete' onClick={() => handleClick(el.id)}>delete</button>
+          </div>
         </div>
       ))}
     </div>

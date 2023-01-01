@@ -37,3 +37,12 @@ input {
   font-weight: 400;
   color: rgb(117, 161, 190);
 }
+.btn-delete:hover {
+  cursor: pointer;
+}
+.btn-complete:hover {
+  cursor: pointer;
+}
+.completed {
+  text-decoration: line-through;
+}
