@@ -1,9 +1,7 @@
 import React, { useRef, useState } from 'react';
 import './App.css';
-import { AddTodo } from './todo/AddTodo';
-import { ToDo } from './todo/ToDo';
-import { Button, createTheme } from '@mui/material'
-import TextField from '@mui/material/TextField';
+import { Todos } from './components/todos/Todos';
+import { Form } from './components/form/Form';
 
 function App() {
 
@@ -43,39 +41,16 @@ function App() {
   
   return (
     <div className='App'>
-      <form onSubmit={handleSubmit}>
-        <input 
-          required 
-          pattern="^[^\s]+(\s.*)?$"
-          ref={textInput} 
-          placeholder='new todo' 
-        />
+      <Form 
+        ref={textInput}
+        handleSubmit={handleSubmit}
+      />
 
-        {/* <TextField
-          required 
-          pattern="^[^\s]+(\s.*)?$"
-          ref={textInput} 
-
-          style={{marginRight: 15}}
-          id="outlined-multiline-flexible"
-          label="new todo"
-          multiline
-          size='small'
-          sx={{width: 285}}
-          color='warning'
-        /> */}
-        <Button type='submit' variant="contained">Add todo</Button>
-      </form>
-
-      {todos.map(el => (
-        <div key={el.id} className='todo-list'>
-          <div className={el.completed ? 'completed' : ''}>{el.text}</div>
-          <div>
-            <button className='btn-complete' onClick={() => handleToggle(el.id)}>complete</button>
-            <button className='btn-delete' onClick={() => handleClick(el.id)}>delete</button>
-          </div>
-        </div>
-      ))}
+      <Todos 
+        todos={todos}
+        handleClick={handleClick}
+        handleToggle={handleToggle}
+      />
     </div>
   );
 }
