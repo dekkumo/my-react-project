@@ -64,7 +64,10 @@ function App() {
       {todos.map(el => (
         <div key={el.id} className='todo-list'>
           <div>{el.text}</div>
-          <button onClick={() => handleClick(el.id)}>delete</button>
+          <div>
+            <button className='btn-complete'>complete</button>
+            <button className='btn-delete' onClick={() => handleClick(el.id)}>delete</button>
+          </div>
         </div>
       ))}
     </div>
