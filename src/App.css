@@ -43,3 +43,6 @@ input {
 .btn-complete:hover {
   cursor: pointer;
 }
+.completed {
+  text-decoration: line-through;
+}
