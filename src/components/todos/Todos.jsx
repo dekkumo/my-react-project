@@ -1,5 +1,5 @@
 import React from 'react'
-import { Todo } from '../todo/Todo'
+import { Todo } from './todo/Todo'
 
 
 export const Todos = ({selectVarTodos, handleToggle, handleClick}) => {

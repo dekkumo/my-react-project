@@ -10,7 +10,6 @@ export const Form = forwardRef((props, ref) => {
 
   const searchTodo = (e) => {
     props.setSearch(e.target.value)
-    // console.log(e.target.value)
   }
 
   return (
@@ -24,13 +23,13 @@ export const Form = forwardRef((props, ref) => {
       />
       <Button type='submit' variant="contained">Add todo</Button>
 
-      <select onChange={selectTodo}>
+      <select className={classes.select} onChange={selectTodo}>
         <option value="All">All</option>
         <option value="Completed">Completed</option>
         <option value="Uncompleted">Uncompleted</option>
       </select>
 
-      <input onInput={searchTodo} />
+      <input className={classes.searchInput} onInput={searchTodo} />
     </form>
   )
 })
