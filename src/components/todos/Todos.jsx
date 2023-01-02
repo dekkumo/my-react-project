@@ -2,10 +2,10 @@ import React from 'react'
 import { Todo } from '../todo/Todo'
 
 
-export const Todos = ({todos, handleToggle, handleClick}) => {
+export const Todos = ({selectVarTodos, handleToggle, handleClick}) => {
   return (
     <div>
-      {todos.map(el => (
+      {selectVarTodos.map(el => (
         <Todo
           key={el.id}
           el={el}
