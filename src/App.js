@@ -7,6 +7,7 @@ function App() {
 
   const [todos, setTodos] = useState([])
   const [select, setSelect] = useState('All')
+  const [search, setSearch] = useState('')
   
   const textInput = useRef()
 
@@ -41,7 +42,7 @@ function App() {
     setTodos([...todos])
   }
 
-  const selectTodosFn = () => {
+  const selectAndSearchTodos = () => {
 
     let copyTodos = [...todos]
 
@@ -63,10 +64,15 @@ function App() {
         break;
     }
 
+    let searchText = search.toLowerCase()
+    selectArray = selectArray.filter(el => {
+      return el.text.includes(searchText)
+    })
+
     return selectArray
   }
 
-  const selectVarTodos = useMemo(selectTodosFn, [todos, select])
+  const selectVarTodos = useMemo(selectAndSearchTodos, [todos, select, search])
   
   return (
     <div className='App'>
@@ -75,6 +81,7 @@ function App() {
         todos={todos}
         setSelect={setSelect}
         setTodos={setTodos}
+        setSearch={setSearch}
         handleSubmit={handleSubmit}
       />
 
