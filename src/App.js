@@ -1,7 +1,7 @@
 import React, { useMemo, useRef, useState } from 'react';
 import './App.css';
-import { Todos } from './components/todos/Todos';
-import { Form } from './components/form/Form';
+import { Todos } from './components/pages/todoPage/todos/Todos';
+import { Form } from './components/pages/todoPage/form/Form';
 
 function App() {
 
