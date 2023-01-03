@@ -2,7 +2,7 @@
   margin: 0 0 40px 0;
 }
 .input {
-  margin-right: 15px;
+  margin: 0 15px 20px 0;
   padding: 0 15px;
   height: 32px;
   width: 250px;
@@ -10,4 +10,11 @@
   border-radius: 5px;
   color: rgb(96, 110, 136);
   box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);;
+}
+
+.select {
+  margin-right: 120px;
+}
+.searchInput {
+
 }
