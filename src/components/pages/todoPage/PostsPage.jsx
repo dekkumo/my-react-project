@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { Link } from 'react-router-dom'
 import classes from './PostsPage.module.css'
 
 export const PostsPage = () => {
@@ -17,13 +18,18 @@ export const PostsPage = () => {
 
   return (
     <div className={classes.post__container}>
-      {posts.map((el) => (
+      {posts.map(el => (
         <div key={el.id} className={classes.post}>
-          <div className={classes.title}>{el.title}</div>
-          <div className={classes.body}>{el.body}</div>
+          <Link 
+            to={`/posts/${el.id}`} 
+            className={classes.link}
+          >
+            <div className={classes.title}>{el.title}</div>
+            <div className={classes.body}>{el.body}</div>
+          </Link>
         </div>
       ))}
-      <button onClick={getPosts}>new posts</button>
+      <button className={classes.button} onClick={getPosts}>new posts</button>
     </div>
   )
 }
