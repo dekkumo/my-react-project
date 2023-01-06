@@ -21,3 +21,6 @@
 .completed {
   text-decoration: line-through;
 }
+.btnEdit:hover {
+  cursor: pointer;
+}

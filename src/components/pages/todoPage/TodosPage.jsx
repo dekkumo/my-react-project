@@ -1,6 +1,7 @@
 import React, { useMemo, useRef, useState } from 'react';
 import { Todos } from './todos/Todos';
 import { Form } from './form/Form';
+import { MyModal } from '../modal/MyModal';
 
 function TodosPage() {
 
@@ -63,8 +64,8 @@ function TodosPage() {
         break;
     }
 
-    let searchText = search.toLowerCase()
-    selectArray = selectArray.filter(el => {
+      let searchText = search.toLowerCase()
+      selectArray = selectArray.filter(el => {
       let lowerText = el.text.toLowerCase()
       return lowerText.includes(searchText)
     })
