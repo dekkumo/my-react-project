@@ -90,6 +90,8 @@ function TodosPage() {
         selectVarTodos={selectVarTodos}
         handleClick={handleClick}
         handleToggle={handleToggle}
+        todos={todos}
+        setTodos={setTodos}
       />
     </div>
   );
