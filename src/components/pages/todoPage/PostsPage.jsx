@@ -5,12 +5,14 @@ import classes from './PostsPage.module.css'
 export const PostsPage = () => {
 
   const [posts, setPosts] = useState([])
+  const [start, setStart] = useState(0)
 
   async function getPosts() {
     try {
-      let response = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=10`)
+      let response = await fetch(`https://jsonplaceholder.typicode.com/posts?_start=${start}&_limit=10`)
       let postList = await response.json()
       setPosts([...posts, ...postList])
+      setStart(start+10)
     } catch(err) {
       console.log(err.message)
     }
