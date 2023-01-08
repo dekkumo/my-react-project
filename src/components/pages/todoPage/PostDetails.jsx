@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import classes from './PostDetails.module.css'
 
 export const PostDetails = () => {
@@ -21,8 +21,13 @@ export const PostDetails = () => {
 
   return (
     <section className={classes.post__item}>
-      <h3 className={classes.title}>{post.title}</h3>
-      <div className={classes.body}>{post.body}</div>
+      <div className={classes.container__post}>
+        <h3 className={classes.title}>{post.title}</h3>
+        <div className={classes.body}>{post.body}</div>
+      </div>
+      <Link to={'/posts'}>
+        <button className={classes.button}>go back</button>
+      </Link>
     </section>
   )
 }

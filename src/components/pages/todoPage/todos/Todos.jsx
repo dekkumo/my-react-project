@@ -64,11 +64,8 @@ export const Todos = ({selectVarTodos, handleToggle, handleClick, todos, setTodo
             className={classes.input__modal}
           />
           <div className={classes.btn__container}>
-            <button
-              className={classes.btn__modal}
-              onClick={saveEditedTodo}
-            >save</button>
-            <button onClick={closeModal} className={classes.btnCancel}>cancel</button>
+            <button className={classes.btn__modal} onClick={saveEditedTodo}>save</button>
+            <button onClick={closeModal} className={classes.btn__modal}>cancel</button>
           </div>
         </div>
       </MyModal>

@@ -9,15 +9,28 @@
 .btn__container {
 }
 .input__modal {
-  width: 350px;
+  width: 340px;
   height: 30px;
   margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #d47006;
+  color: #366d6f;
+  padding: 0 15px;
 }
 .btn__modal {
-  /* width: 100px;
-  height: 30px; */
+  width: 70px;
   margin-right: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: #d47006;
+  color: #fff;
+  transition: all 0.5s ease 0s;
 }
-.btnCancel {
-
+.btn__modal:last-child {
+  margin-right: 0px;
+}
+.btn__modal:hover {
+  background-color: #bc5c00;
+  cursor: pointer;
 }
