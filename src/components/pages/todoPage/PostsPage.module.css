@@ -10,6 +10,9 @@
   margin-bottom: 20px;
   padding: 10px 5px;
 }
+.link {
+  text-decoration: none;
+}
 .title {
   font-weight: 500;
   font-size: 18px;
@@ -18,4 +21,7 @@
 .body {
   font-weight: 500;
   color: rgb(252, 57, 148);
+}
+.button:hover {
+  cursor: pointer;
 }
