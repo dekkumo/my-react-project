@@ -1,5 +1,7 @@
 .form {
-  margin: 0 0 40px 0;
+  max-width: 500px;
+  margin: 0 auto;
+  padding-top: 100px;
 }
 .input {
   margin: 0 15px 20px 0;
@@ -16,5 +18,5 @@
   margin-right: 120px;
 }
 .searchInput {
-
+  margin-bottom: 40px;
 }
