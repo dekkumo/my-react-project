@@ -25,3 +25,14 @@
 .button:hover {
   cursor: pointer;
 }
+.container__pg {
+}
+.list_pg {
+  display: flex;
+}
+.li__pg {
+  list-style: none;
+}
+.li__pg:hover {
+  cursor: pointer;
+}
