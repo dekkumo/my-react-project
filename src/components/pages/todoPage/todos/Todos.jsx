@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { MyModal } from '../../modal/MyModal'
+import { MyModal } from '../../../utils/modal/MyModal'
 import { Todo } from './todo/Todo'
 import classes from './Todos.module.css'
 

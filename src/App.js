@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import TodosPage from './components/pages/todoPage/TodosPage';
-import { PostsPage } from './components/pages/todoPage/PostsPage';
+import { PostsPage } from './components/pages/postPage/PostsPage';
 import { Header } from './components/header/Header';
-import { PostDetails } from './components/pages/todoPage/PostDetails';
+import { PostDetails } from './components/pages/postPage/PostDetails';
 import { Error } from './components/pages/error/Error';
 
 function App() {
-  
+
   return (
     <div className='App'>
       <BrowserRouter>

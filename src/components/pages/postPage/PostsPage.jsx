@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
+import { Loader } from '../../utils/loader/Loader'
 import classes from './PostsPage.module.css'
 
 export const PostsPage = () => {
@@ -8,6 +9,7 @@ export const PostsPage = () => {
   const [loading, setLoading] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
   const [limit] = useState(10)
+  const [loader, setLoader] = useState(true)
 
   useEffect(() => {
     async function getPosts() {
@@ -17,6 +19,7 @@ export const PostsPage = () => {
         let postList = await response.json()
         setPosts([...posts, ...postList])
         setLoading(false)
+        setLoader(false)
       } catch(err) {
         console.log(err.message)
       }
@@ -49,12 +52,14 @@ export const PostsPage = () => {
   return (
     <div className={classes.post__container}>
       <h1 className={classes.title__main}>Posts</h1>
+      {loader && <Loader />}
       {currentPost.map(el => (
         <div key={el.id} className={classes.post}>
           <Link
             to={`/posts/${el.id}`}
             className={classes.link}
           >
+            <div className={classes.id}>{el.id}</div>
             <div className={classes.title}>{el.title}</div>
             <div className={classes.body}>{el.body}</div>
           </Link>
@@ -71,10 +76,15 @@ export const PostsPage = () => {
         </ul>
       </div>
 
-      <div className={classes.btn__container}>
-        <button className={classes.btn__nav} onClick={prevPage}>prev page</button>
-        <button className={classes.btn__nav} onClick={nextPage}>next page</button>
-      </div>
+      {
+        loader ?
+        null
+        :
+        <div className={classes.btn__container}>
+          <button className={classes.btn__nav} onClick={prevPage}>prev page</button>
+          <button className={classes.btn__nav} onClick={nextPage}>next page</button>
+        </div>
+      }
     </div>
   )
 }
