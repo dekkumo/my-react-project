@@ -48,6 +48,7 @@ export const PostsPage = () => {
 
   return (
     <div className={classes.post__container}>
+      <h1 className={classes.title__main}>Posts</h1>
       {currentPost.map(el => (
         <div key={el.id} className={classes.post}>
           <Link
@@ -70,8 +71,10 @@ export const PostsPage = () => {
         </ul>
       </div>
 
-      <button onClick={prevPage}>prev page</button>
-      <button onClick={nextPage}>next page</button>
+      <div className={classes.btn__container}>
+        <button className={classes.btn__nav} onClick={prevPage}>prev page</button>
+        <button className={classes.btn__nav} onClick={nextPage}>next page</button>
+      </div>
     </div>
   )
 }

@@ -1,14 +1,14 @@
 import React, { useMemo, useRef, useState } from 'react';
 import { Todos } from './todos/Todos';
 import { Form } from './form/Form';
-import { MyModal } from '../modal/MyModal';
+import classes from './TodosPage.module.css'
 
 function TodosPage() {
 
   const [todos, setTodos] = useState([])
   const [select, setSelect] = useState('All')
   const [search, setSearch] = useState('')
-  
+
   const textInput = useRef()
 
   const handleSubmit = (event) => {
@@ -74,10 +74,11 @@ function TodosPage() {
   }
 
   const selectVarTodos = useMemo(selectAndSearchTodos, [todos, select, search])
-  
+
   return (
     <div>
-      <Form 
+      <h1 className={classes.title}>Todo List</h1>
+      <Form
         ref={textInput}
         todos={todos}
         setSelect={setSelect}
@@ -86,7 +87,7 @@ function TodosPage() {
         handleSubmit={handleSubmit}
       />
 
-      <Todos 
+      <Todos
         selectVarTodos={selectVarTodos}
         handleClick={handleClick}
         handleToggle={handleToggle}

@@ -1,5 +1,4 @@
 import React, { forwardRef, useRef } from 'react'
-import { Button, createTheme } from '@mui/material'
 import classes from './Form.module.css'
 
 export const Form = forwardRef((props, ref) => {
@@ -14,14 +13,20 @@ export const Form = forwardRef((props, ref) => {
 
   return (
     <form className={classes.form} onSubmit={props.handleSubmit}>
-      <input 
+      <input
         className={classes.input}
-        required 
+        required
         pattern="^[^\s]+(\s.*)?$"
-        ref={ref} 
-        placeholder='new todo' 
+        ref={ref}
+        placeholder='new todo'
       />
-      <Button type='submit' variant="contained">Add todo</Button>
+      <button
+        className={classes.button}
+        type='submit'
+        variant="contained"
+      >
+        Add todo
+      </button>
 
       <select className={classes.select} onChange={selectTodo}>
         <option value="All">All</option>

@@ -43,7 +43,7 @@ export const Todos = ({selectVarTodos, handleToggle, handleClick, todos, setTodo
 
 
   return (
-    <div>
+    <div className={classes.container__todos}>
       {selectVarTodos.map(el => (
         <Todo
           key={el.id}
@@ -54,17 +54,17 @@ export const Todos = ({selectVarTodos, handleToggle, handleClick, todos, setTodo
           setEdit={setEdit}
         />
       ))}
-      <MyModal 
+      <MyModal
         edit={edit}
         setEdit={setEdit}
       >
-        <div className={classes.container}>
+        <div className={classes.container__modal}>
           <input
             ref={inputText}
-            className={classes.input__modal} 
+            className={classes.input__modal}
           />
           <div className={classes.btn__container}>
-            <button 
+            <button
               className={classes.btn__modal}
               onClick={saveEditedTodo}
             >save</button>
