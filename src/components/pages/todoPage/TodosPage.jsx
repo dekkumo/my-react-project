@@ -1,7 +1,7 @@
 import React, { useMemo, useRef, useState } from 'react';
 import { Todos } from './todos/Todos';
-import { Form } from './form/Form';
 import classes from './TodosPage.module.css'
+import { Form } from './form/Form';
 
 function TodosPage() {
 

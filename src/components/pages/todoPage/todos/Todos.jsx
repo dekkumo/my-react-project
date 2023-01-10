@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { MyModal } from '../../modal/MyModal'
+import { MyModal } from '../../../utils/modal/MyModal'
 import { Todo } from './todo/Todo'
 import classes from './Todos.module.css'
 
@@ -64,11 +64,8 @@ export const Todos = ({selectVarTodos, handleToggle, handleClick, todos, setTodo
             className={classes.input__modal}
           />
           <div className={classes.btn__container}>
-            <button
-              className={classes.btn__modal}
-              onClick={saveEditedTodo}
-            >save</button>
-            <button onClick={closeModal} className={classes.btnCancel}>cancel</button>
+            <button className={classes.btn__modal} onClick={saveEditedTodo}>save</button>
+            <button onClick={closeModal} className={classes.btn__modal}>cancel</button>
           </div>
         </div>
       </MyModal>
