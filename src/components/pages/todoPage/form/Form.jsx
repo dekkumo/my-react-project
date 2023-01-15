@@ -37,7 +37,11 @@ export const Form = forwardRef((props, ref) => {
           <option value="Uncompleted">Uncompleted</option>
         </select>
 
-        <input className={classes.searchInput} onInput={searchTodo} />
+        <input
+          className={classes.searchInput}
+          onInput={searchTodo}
+          placeholder='search'
+        />
       </div>
     </form>
   )
