@@ -13,32 +13,36 @@ export const Form = forwardRef((props, ref) => {
 
   return (
     <form className={classes.form} onSubmit={props.handleSubmit}>
-      <input
-        className={classes.input}
-        required
-        pattern="^[^\s]+(\s.*)?$"
-        ref={ref}
-        placeholder='new todo'
-      />
-      <button
-        className={classes.button}
-        type='submit'
-        variant="contained"
-      >
+      <div className={classes.container__add}>
+        <input
+          className={classes.input}
+          required
+          pattern="^[^\s]+(\s.*)?$"
+          ref={ref}
+          placeholder='new todo'
+        />
+        <button
+          className={classes.button}
+          type='submit'
+          variant="contained"
+        >
         Add todo
       </button>
+      </div>
 
-      <select className={classes.select} onChange={selectTodo}>
-        <option value="All">All</option>
-        <option value="Completed">Completed</option>
-        <option value="Uncompleted">Uncompleted</option>
-      </select>
+      <div className={classes.container__search}>
+        <select className={classes.select} onChange={selectTodo}>
+          <option value="All">All</option>
+          <option value="Completed">Completed</option>
+          <option value="Uncompleted">Uncompleted</option>
+        </select>
 
-      <input 
-        className={classes.searchInput} 
-        onInput={searchTodo}
-        placeholder='search' 
-      />
+        <input
+          className={classes.searchInput}
+          onInput={searchTodo}
+          placeholder='search'
+        />
+      </div>
     </form>
   )
 })

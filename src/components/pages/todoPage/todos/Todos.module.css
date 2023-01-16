@@ -1,5 +1,4 @@
 .container__todos {
-  margin-top: 116px;
 }
 .container__modal {
   display: flex;
@@ -7,9 +6,12 @@
   align-items: center;
 }
 .btn__container {
+  display: flex;
+  gap: 20px;
 }
 .input__modal {
-  width: 340px;
+  max-width: 340px;
+  width: 100%;
   height: 30px;
   margin-bottom: 15px;
   border-radius: 10px;
@@ -19,10 +21,8 @@
 }
 .btn__modal {
   width: 70px;
-  margin-right: 20px;
   padding: 10px;
   border-radius: 10px;
-  border: none;
   background-color: #d47006;
   color: #fff;
   transition: all 0.5s ease 0s;

@@ -10,16 +10,19 @@ import { Error } from './components/pages/error/Error';
 function App() {
 
   return (
-    <div className='App'>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path='/' element={<TodosPage />} />
-          <Route path='/posts' element={<PostsPage />} />
-          <Route path='/posts/:id' element={<PostDetails />} />
-          <Route path='*' element={<Error />} />
-        </Routes>
-      </BrowserRouter>
+    <div>
+      <div className='header'></div>
+      <div className='App'>
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path='/' element={<TodosPage />} />
+            <Route path='/posts' element={<PostsPage />} />
+            <Route path='/posts/:id' element={<PostDetails />} />
+            <Route path='*' element={<Error />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
     </div>
   );
 }
